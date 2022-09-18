@@ -87,7 +87,7 @@ def pass_wheels(input, reverse = False):
     # Keep in mind that reflected signals pass wheels in reverse order
     encoded_ch = '';
 
-    # reverse°¡ ÂüÀÏ °æ¿ì, ¹İ»çÆÇ¿¡¼­ µ¹¾Æ¿À´Â ½ÅÈ£ÀÌ¹Ç·Î ·ÎÅÍ ¼ø¼­¸¦ µÚ->¾ÕÀ¸·Î Åë°úÇÑ´Ù.
+    # reverseê°€ ì°¸ì¼ ê²½ìš°, ë°˜ì‚¬íŒì—ì„œ ëŒì•„ì˜¤ëŠ” ì‹ í˜¸ì´ë¯€ë¡œ ë¡œí„° ìˆœì„œë¥¼ ë’¤->ì•ìœ¼ë¡œ í†µê³¼í•œë‹¤.
     if reverse :
         encoded_ch = SETTINGS["WHEELS"][2]["wire"][ord(input) - ord('A')]
         encoded_ch = SETTINGS["WHEELS"][1]["wire"][ord(encoded_ch) - ord('A')]
@@ -106,9 +106,9 @@ def pass_ukw(input):
 # Wheel Rotation
 def rotate_wheels():
     # Implement Wheel Rotation Logics
-    # ¾ËÆÄºªÀÇ °¹¼ö´Â 26°³ ÀÌ¹Ç·Î, 26È¸ È¸ÀüÇÏ¸é ¿øÀ§Ä¡·Î µÇµ¹¾Æ¿Â´Ù.
-    # µû¶ó¼­ È¸Àü¼ö°¡ 26È¸ ÀÌ»óÀÏ °æ¿ì, ´ÙÀ½ ·ÎÅÍ¸¦ 1È¸ÀüÇÏ°í Çö ·ÎÅÍÀÇ È¸Àü¼ö¸¦ 0À¸·Î ¼³Á¤ÇØÁØ´Ù.
-    # È¸Àü¼ö¸¦ Áõ°¡½ÃÅ³ ¶§, ÇØ´çÇÏ´Â ·ÎÅÍÀÇ ¾ËÆÄºª À§Ä¡¸¦ 1Ä­ ¾¿ ¿Å±ä´Ù. -> wire_rotate()
+    # ì•ŒíŒŒë²³ì˜ ê°¯ìˆ˜ëŠ” 26ê°œ ì´ë¯€ë¡œ, 26íšŒ íšŒì „í•˜ë©´ ì›ìœ„ì¹˜ë¡œ ë˜ëŒì•„ì˜¨ë‹¤.
+    # ë”°ë¼ì„œ íšŒì „ìˆ˜ê°€ 25íšŒ ì´ˆê³¼ì¼ ê²½ìš°, ë‹¤ìŒ ë¡œí„°ë¥¼ 1íšŒì „í•˜ê³  í˜„ ë¡œí„°ì˜ íšŒì „ìˆ˜ë¥¼ 0ìœ¼ë¡œ ì„¤ì •í•´ì¤€ë‹¤.
+    # íšŒì „ìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¬ ë•Œ, í•´ë‹¹í•˜ëŠ” ë¡œí„°ì˜ ì•ŒíŒŒë²³ ìœ„ì¹˜ë¥¼ 1ì¹¸ ì”© ì˜®ê¸´ë‹¤. -> wire_rotate()
     if SETTINGS["WHEELS"][0]["turn"] < 26 :
         SETTINGS["WHEELS"][0]["turn"] =+ 1; wire_rotate(0)
         if SETTINGS["WHEELS"][0]["turn"] > 25 :
@@ -122,7 +122,7 @@ def rotate_wheels():
 
 # wire rotate
 def wire_rotate(index):
-    # ¸Ç ¾Õ ±ÛÀÚ¸¦ µÚ·Î ¿Å±â°í ÇÑÄ­¾¿ ¶¯±ä´Ù.
+    # ë§¨ ì• ê¸€ìë¥¼ ë’¤ë¡œ ì˜®ê¸°ê³  í•œì¹¸ì”© ë•¡ê¸´ë‹¤.
     temp = SETTINGS["WHEELS"][index]["wire"][0];
     SETTINGS["WHEELS"][index]["wire"] = SETTINGS["WHEELS"][index]["wire"][1:] + temp
 
