@@ -86,8 +86,7 @@ def pass_wheels(input, reverse = False):
     # Implement Wheel Logics
     # Keep in mind that reflected signals pass wheels in reverse order
     encoded_ch = '';
-
-    # reverse가 참일 경우, 반사판에서 돌아오는 신호이므로 로터 순서를 뒤->앞으로 통과한다.
+    
     if reverse :
         encoded_ch = SETTINGS["WHEELS"][2]["wire"][ord(input) - ord('A')]
         encoded_ch = SETTINGS["WHEELS"][1]["wire"][ord(encoded_ch) - ord('A')]
@@ -106,9 +105,6 @@ def pass_ukw(input):
 # Wheel Rotation
 def rotate_wheels():
     # Implement Wheel Rotation Logics
-    # 알파벳의 갯수는 26개 이므로, 26회 회전하면 원위치로 되돌아온다.
-    # 따라서 회전수가 25회 초과일 경우, 다음 로터를 1회전하고 현 로터의 회전수를 0으로 설정해준다.
-    # 회전수를 증가시킬 때, 해당하는 로터의 알파벳 위치를 1칸 씩 옮긴다. -> wire_rotate()
     if SETTINGS["WHEELS"][0]["turn"] < 26 :
         SETTINGS["WHEELS"][0]["turn"] =+ 1; wire_rotate(0)
         if SETTINGS["WHEELS"][0]["turn"] > 25 :
@@ -122,7 +118,6 @@ def rotate_wheels():
 
 # wire rotate
 def wire_rotate(index):
-    # 맨 앞 글자를 뒤로 옮기고 한칸씩 땡긴다.
     temp = SETTINGS["WHEELS"][index]["wire"][0];
     SETTINGS["WHEELS"][index]["wire"] = SETTINGS["WHEELS"][index]["wire"][1:] + temp
 
