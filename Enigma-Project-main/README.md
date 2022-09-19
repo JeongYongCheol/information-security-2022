@@ -3,13 +3,11 @@
 
 ## 201702072 정용철
 
-# Wheels
-def pass_wheels(input, reverse = False):
+# def pass_wheels(input, reverse = False): Wheels
 
     # reverse가 참일 경우, 반사판에서 돌아오는 신호이므로 로터 순서를 뒤(R)->앞(L)으로 통과한다.
 
-# Wheel Rotation
-def rotate_wheels():
+# def rotate_wheels(): Wheel Rotation
 
     # Implement Wheel Rotation Logics
     
@@ -19,7 +17,6 @@ def rotate_wheels():
     
     # 회전수를 증가시킬 때, 해당하는 로터의 알파벳 위치를 1칸 씩 옮긴다. -> wire_rotate()
     
-# wire rotate (새로 정의한 함수)
-def wire_rotate(index):
+# def wire_rotate(index): wire rotate (새로 정의한 함수)
     
     # 맨 앞 글자를 뒤로 옮기고 한칸씩 땡긴다.
