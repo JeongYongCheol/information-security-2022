@@ -6,7 +6,7 @@
 # Wheels
 def pass_wheels(input, reverse = False):
 
-    # reverse가 참일 경우, 반사판에서 돌아오는 신호이므로 로터 순서를 뒤->앞으로 통과한다.
+    # reverse가 참일 경우, 반사판에서 돌아오는 신호이므로 로터 순서를 뒤(R)->앞(L)으로 통과한다.
 
 # Wheel Rotation
 def rotate_wheels():
